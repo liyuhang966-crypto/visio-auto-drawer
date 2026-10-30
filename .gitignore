@@ -1,0 +1,38 @@
+# Local inputs, generated documents and activity records
+/input/
+/output/
+/outputs/
+/work/
+/lessons/
+*.vsdx
+*.vsd
+*.pdf
+*.log
+*.jsonl
+~$*
+
+# Python and local environment
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Credentials and machine-local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials*.json
+secrets*.json
+.codex/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

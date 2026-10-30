@@ -1,0 +1,5 @@
+interface:
+  display_name: "Visio Auto Drawer"
+  short_description: "用 Microsoft Visio 自动绘制、复刻和优化论文级架构图"
+  brand_color: "#3B82F6"
+  default_prompt: "请使用 visio-auto-drawer skill，根据自然语言或参考图生成可编辑 Visio 图，并进行论文级美化优化。"

@@ -1,0 +1,29 @@
+{
+  "title": "知识库聊天系统 ER 图",
+  "type": "er_diagram",
+  "layout": "grid",
+  "output": "output/result.vsdx",
+  "page": {
+    "width": 12.0,
+    "height": 8.5
+  },
+  "animation": {
+    "enabled": true,
+    "delay_seconds": 0.35
+  },
+  "nodes": [
+    {"id": "user", "text": "用户\nid\nname\nemail", "shape": "database", "style": "primary"},
+    {"id": "doc", "text": "文档\nid\ntitle\nowner_id", "shape": "database"},
+    {"id": "kb", "text": "知识库分块\nid\ndoc_id\ncontent\nembedding", "shape": "database", "style": "success"},
+    {"id": "session", "text": "会话\nid\nuser_id\ncreated_at", "shape": "database"},
+    {"id": "message", "text": "消息\nid\nsession_id\nrole\ncontent", "shape": "database", "style": "warning"}
+  ],
+  "edges": [
+    {"from": "user", "to": "doc", "text": "拥有", "style": "arrow"},
+    {"from": "doc", "to": "kb", "text": "拆分为", "style": "arrow"},
+    {"from": "user", "to": "session", "text": "创建", "style": "arrow"},
+    {"from": "session", "to": "message", "text": "包含", "style": "arrow"},
+    {"from": "message", "to": "kb", "text": "检索引用", "style": "dashed"}
+  ],
+  "groups": []
+}

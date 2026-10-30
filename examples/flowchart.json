@@ -1,0 +1,32 @@
+{
+  "title": "Visio 自动绘图流程",
+  "type": "flowchart",
+  "layout": "top_down",
+  "output": "output/result.vsdx",
+  "page": {
+    "width": 11.0,
+    "height": 8.5
+  },
+  "animation": {
+    "enabled": true,
+    "delay_seconds": 0.4
+  },
+  "nodes": [
+    {"id": "start", "text": "开始", "shape": "terminator", "style": "success"},
+    {"id": "read", "text": "读取需求", "shape": "process"},
+    {"id": "json", "text": "生成 diagram.json", "shape": "process", "style": "primary"},
+    {"id": "visio", "text": "启动 Visio", "shape": "process"},
+    {"id": "draw", "text": "自动绘图", "shape": "process", "style": "primary"},
+    {"id": "save", "text": "保存文件", "shape": "process"},
+    {"id": "end", "text": "结束", "shape": "terminator", "style": "success"}
+  ],
+  "edges": [
+    {"from": "start", "to": "read", "text": "", "style": "arrow"},
+    {"from": "read", "to": "json", "text": "", "style": "arrow"},
+    {"from": "json", "to": "visio", "text": "", "style": "arrow"},
+    {"from": "visio", "to": "draw", "text": "", "style": "arrow"},
+    {"from": "draw", "to": "save", "text": "", "style": "arrow"},
+    {"from": "save", "to": "end", "text": "", "style": "arrow"}
+  ],
+  "groups": []
+}

@@ -1,0 +1,4 @@
+-r requirements.txt
+# Optional image contour detection
+numpy>=1.26,<3
+opencv-python>=4.9,<5

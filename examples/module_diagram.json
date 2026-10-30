@@ -1,0 +1,35 @@
+{
+  "title": "本地 AI 聊天助手模块图",
+  "type": "module_diagram",
+  "layout": "top_down",
+  "output": "output/result.vsdx",
+  "page": {
+    "width": 13.0,
+    "height": 9.0
+  },
+  "animation": {
+    "enabled": true,
+    "delay_seconds": 0.35
+  },
+  "nodes": [
+    {"id": "frontend", "text": "前端 React", "shape": "box", "style": "primary"},
+    {"id": "backend", "text": "后端 FastAPI", "shape": "box", "style": "success"},
+    {"id": "sqlite", "text": "SQLite", "shape": "database"},
+    {"id": "ollama", "text": "Ollama", "shape": "box", "style": "warning"},
+    {"id": "model", "text": "本地模型", "shape": "box"},
+    {"id": "kb", "text": "知识库", "shape": "database", "style": "primary"},
+    {"id": "session", "text": "会话管理", "shape": "box"}
+  ],
+  "edges": [
+    {"from": "frontend", "to": "backend", "text": "HTTP API", "style": "arrow"},
+    {"from": "backend", "to": "sqlite", "text": "读写会话与配置", "style": "arrow"},
+    {"from": "backend", "to": "ollama", "text": "模型调用", "style": "arrow"},
+    {"from": "ollama", "to": "model", "text": "加载推理", "style": "arrow"},
+    {"from": "backend", "to": "kb", "text": "检索增强", "style": "arrow"},
+    {"from": "backend", "to": "session", "text": "上下文管理", "style": "arrow"}
+  ],
+  "groups": [
+    {"id": "app", "text": "应用服务", "node_ids": ["frontend", "backend", "session"], "style": "container"},
+    {"id": "local_ai", "text": "本地 AI 能力", "node_ids": ["ollama", "model", "kb"], "style": "container"}
+  ]
+}
